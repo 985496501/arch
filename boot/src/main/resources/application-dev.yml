@@ -1,0 +1,22 @@
+# config spring datasource
+spring:
+    datasource:
+        # 使用极速的连接池hikari
+        type: com.zaxxer.hikari.HikariDataSource
+        # jdbc configuration
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/arch?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&serverTimezone=GMT%2B8
+        username: root
+        password: root
+        # hikari configuration
+        hikari:
+                minimum-idle: 5
+                idle-timeout: 600000
+                maximum-pool-size: 10
+                auto-commit: true
+                pool-name: MyHikariCP
+                # life span: 30m
+                max-lifetime: 1800000
+                # timeout: 30s
+                connection-timeout: 30000
+                connection-test-query: SELECT 1
